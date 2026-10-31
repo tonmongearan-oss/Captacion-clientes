@@ -1,0 +1,26 @@
+# Blueprint de Render: crea el servicio web con disco persistente en Frankfurt (UE).
+# Render → New → Blueprint → elige este repositorio.
+services:
+  - type: web
+    name: captacion-clientes
+    runtime: docker
+    plan: starter          # el plan gratuito no admite disco: se perderían los datos en cada reinicio
+    region: frankfurt
+    healthCheckPath: /healthz
+    disk:
+      name: datos
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: BIND_ADDRESS
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: /var/data
+      - key: SETUP_CODE        # código para crear tu cuenta la primera vez (Render lo genera)
+        generateValue: true
+      - key: ANTHROPIC_API_KEY # opcional: pégala en Render → Environment
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-opus-5-5
+      - key: GOOGLE_PLACES_API_KEY # opcional
+        sync: false
