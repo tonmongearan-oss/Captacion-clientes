@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Captación de Clientes</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='14' cy='14' r='9' fill='none' stroke='%232563eb' stroke-width='4'/><path d='M21 21l7 7' stroke='%232563eb' stroke-width='4' stroke-linecap='round'/></svg>">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div id="auth" class="auth hidden"></div>
+  <div id="shell" class="shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand"><span class="logo">◎</span> Captación<br><small>de clientes</small></div>
+      <nav>
+        <a href="#/" data-nav="panel"><span>🏠</span> Panel</a>
+        <a href="#/buscar" data-nav="buscar"><span>🔎</span> Nueva búsqueda</a>
+        <a href="#/leads" data-nav="leads"><span>📇</span> Mis leads</a>
+        <a href="#/historial" data-nav="historial"><span>🕘</span> Historial</a>
+        <a href="#/estadisticas" data-nav="estadisticas"><span>📊</span> Estadísticas</a>
+        <a href="#/ajustes" data-nav="ajustes"><span>⚙️</span> Ajustes y privacidad</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button id="themeBtn" class="btn ghost small" type="button">🌓 Modo oscuro</button>
+        <button id="logoutBtn" class="btn ghost small" type="button">Cerrar sesión</button>
+      </div>
+    </aside>
+    <div class="main-wrap">
+      <header class="topbar">
+        <button id="menuBtn" class="btn ghost small menu-btn" type="button" aria-label="Abrir menú">☰</button>
+        <span id="topTitle" class="top-title"></span>
+        <span id="userName" class="muted small"></span>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
